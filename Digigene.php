@@ -4,8 +4,8 @@
     <!-- This is the HTML form -->
 
    	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-    	Country: <input type="text" name="country">
-    	National animal: <input type="text" name="animal">
+    	Account Name: <input type="text" name="AccName">
+    	Password: <input type="text" name="Password">
     	<input type="submit" name="submit">
     </form>
 
@@ -15,7 +15,7 @@
 		$host = "localhost";
 		$user = "root";
 		$pass = "root";
-		$db = "testdb";
+		$db = "Digigene";
 
 		// open connection
 		$connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
@@ -53,37 +53,15 @@
 		// free result set memory
 		mysqli_free_result($result);
 
-		// set variable values to HTML form inputs
-		$country = $_POST['country'];
-    	$animal = $_POST['animal'];
-		
-		// check to see if user has entered anything
-		if ($animal != "") {
-	 		// build SQL query
-			$query = "INSERT INTO symbols (country, animal) VALUES ('$country', '$animal')";
-			// run the query
-     		$result = mysqli_query($connection,$query) or die ("Error in query: $query. " . mysqli_error());
-			// refresh the page to show new update
-	 		echo "<meta http-equiv='refresh' content='0'>";
-		}
-		
-		// if DELETE pressed, set an id, if id is set then delete it from DB
-		if (isset($_GET['id'])) {
+		$AccName = $_POST["AccName"]; 
+		$Password = $_POST["Password"];
 
-			// create query to delete record
-			echo $_SERVER['PHP_SELF'];
-    		$query = "DELETE FROM symbols WHERE id = ".$_GET['id'];
 
-			// run the query
-     		$result = mysqli_query($connection,$query) or die ("Error in query: $query. " . mysqli_error());
-			
-			// reset the url to remove id $_GET variable
-			$location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
-			exit;
-			
-		}
+		echo $AccName;
 		
+
+
+
 		// close connection
 		mysqli_close($connection);
 
