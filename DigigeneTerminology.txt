@@ -1,0 +1,19 @@
+Digigene Terminology 
+
+Geneodome - The front page for our gene-sequencing/relationship website 
+
+Gene Pool - List of potential matches
+
+Gener - User of digigene
+
+Mutations - Hereditary Diseases that are listed in your profile 
+
+Mutant Score - A point score of your offspring's potential to have a genetic disease 
+
+Gene Class - A ranking system that uses your Mutant Score to separate you into classes that will determine your potential matches 
+
+Cross-fertilization - When a successful match has been created (The goal of a digigene user)
+
+Catching - When you accept a match request from another Gener
+
+Dodge - When you reject a match request from another Gener
