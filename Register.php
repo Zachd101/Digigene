@@ -13,7 +13,6 @@ session_start();
 
 			font-weight: normal;
 			font-family: Tahoma, Geneva, sans-serif; 
-			word-spacing: 10px;
 			color: black;
 		}
 
@@ -69,6 +68,8 @@ else {
     // get form input
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
+    $username = $_SESSION['username'];
+    $password = $_SESSION['password'];
     $isdone = False; 
 
     // open connection
@@ -78,12 +79,31 @@ else {
     mysqli_select_db($connection,$db) or die ("Unable to select database!");
     
 
-    // create query
-    $query = "INSERT INTO accounts (username, password) VALUES ('$username','$password')";
+    $query = "SELECT * FROM `accounts` WHERE `username` LIKE '$username'";
+
+    $result = mysqli_query($connection, $query) or die("Error in query: $query. ".mysqli_error());
+
+    if(mysql_num_rows($result) < 1){
+    	
+	// create query
+    $query = "INSERT INTO accounts(username, password) VALUES ('$username', '$password')";
 
     // execute query
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
+
+
+    } else {
+    
+    	?> 
+    	<script type="text/javascript"> 
+
+    	window.open("http://localhost:8888/Digigene/TakenUsername.html", "_self");
+
+    	</script>
+    	<?php 
+
+    }
  
      // close connection
     mysqli_close($connection);
@@ -95,7 +115,7 @@ else {
     ?> 
 
     <script type="text/javascript">
-    	
+ 
     	window.open("http://localhost:8888/Digigene/Home.php", "_self");
 
     </script>

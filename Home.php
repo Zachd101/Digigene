@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +13,6 @@
 
 			font-weight: normal;
 			font-family: Tahoma, Geneva, sans-serif; 
-			word-spacing: 10px;
 			color: black;
 		}
 
@@ -22,11 +26,16 @@
 	<?php
 
 
+	$username = $_SESSION['username'];
+	$password = $_SESSION['password'];
+
 	?>
 
 	<h1>Genodome</h1>
 
-	<p> Welcome to the genodome <?php echo $username ?></p>
+	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
+
+
 
 </body>
 </html>
