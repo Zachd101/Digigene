@@ -2,7 +2,18 @@
 
 <head>
 
-<basefont face="Arial">
+	<style type="text/css">
+		
+		body {
+
+			font-weight: normal;
+			font-family: Tahoma, Geneva, sans-serif; 
+			word-spacing: 10px;
+			color: black;
+		}
+
+
+	</style>
 
 </head>
 
@@ -10,6 +21,9 @@
 
 
 <?php
+
+include "Home.php";
+
 
 if (!isset($_POST['submit'])) {
 
@@ -52,6 +66,7 @@ else {
     // get form input
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $isdone = False; 
 
     // open connection
     $connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
@@ -66,34 +81,32 @@ else {
     // execute query
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
-    // print message with ID of inserted record
-
-    echo "New record inserted with ID " . mysqli_insert_id($connection);
-
-
-
-
+ 
      // close connection
     mysqli_close($connection);
+
+    $isdone = True;
+
+
+    if($isdone == True){
+    	header("http://localhost:8888/Digigene/Home.php");
+    	exit();
+
+    }
+
+   
+
+
 
    
 }
 
+
+	
+
 ?>
 
 
-<script type="text/javascript">
-
-
-
-	function ResetForm(){
-
-		document.getElementById("form").reset();
-	}
-
-
-
-</script>
 
 </body>
 
