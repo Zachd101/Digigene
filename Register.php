@@ -1,5 +1,10 @@
-<html>
+<?php 
 
+session_start();
+
+?>
+
+<html>
 <head>
 
 	<style type="text/css">
@@ -21,8 +26,6 @@
 
 
 <?php
-
-include "Home.php";
 
 
 if (!isset($_POST['submit'])) {
@@ -64,8 +67,8 @@ else {
 
 
     // get form input
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $_SESSION['username'] = $_POST['username'];
+    $_SESSION['password'] = $_POST['password'];
     $isdone = False; 
 
     // open connection
@@ -87,22 +90,29 @@ else {
 
     $isdone = True;
 
-
     if($isdone == True){
-    	header("http://localhost:8888/Digigene/Home.php");
-    	exit();
 
-    }
+    ?> 
 
-   
+    <script type="text/javascript">
+    	
+    	window.open("http://localhost:8888/Digigene/Home.php", "_self");
+
+    </script>
 
 
+    <?php 
 
+
+	} else {
+
+		unset($_POST['username']);
+		unset($_POST['password']);
+		unset($_POST['submit']);
+	}
    
 }
 
-
-	
 
 ?>
 
