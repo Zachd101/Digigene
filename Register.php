@@ -64,13 +64,11 @@ else {
 
     $db = "digigene";
 
-
     // get form input
     $_SESSION['username'] = $_POST['username'];
     $_SESSION['password'] = $_POST['password'];
     $username = $_SESSION['username'];
     $password = $_SESSION['password'];
-    $isdone = False; 
 
     // open connection
     $connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
@@ -79,40 +77,26 @@ else {
     mysqli_select_db($connection,$db) or die ("Unable to select database!");
     
 
-    $query = "SELECT * FROM `accounts` WHERE `username` LIKE '$username'";
+    $query = "SELECT * FROM accounts WHERE username = '$username'";
 
-    $result = mysqli_query($connection, $query) or die("Error in query: $query. ".mysqli_error());
+    $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
-    if(mysql_num_rows($result) < 1){
+    if (mysqli_num_rows($result) > 0){
+
+    	echo "That username is already taken";
+    } else {
     	
 	// create query
     $query = "INSERT INTO accounts(username, password) VALUES ('$username', '$password')";
 
     // execute query
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
-
-
-
-    } else {
-    
-    	?> 
-    	<script type="text/javascript"> 
-
-    	window.open("http://localhost:8888/Digigene/TakenUsername.html", "_self");
-
-    	</script>
-    	<?php 
-
-    }
  
      // close connection
     mysqli_close($connection);
 
-    $isdone = True;
 
-    if($isdone == True){
-
-    ?> 
+    ?>
 
     <script type="text/javascript">
  
@@ -123,14 +107,7 @@ else {
 
     <?php 
 
-
-	} else {
-
-		unset($_POST['username']);
-		unset($_POST['password']);
-		unset($_POST['submit']);
-	}
-   
+   }
 }
 
 

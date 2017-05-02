@@ -31,7 +31,7 @@ session_start();
 
 	?>
 
-	<h1>Genodome</h1>
+	<h1>Genodome</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
 	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
