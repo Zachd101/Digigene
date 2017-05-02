@@ -2,6 +2,8 @@
 	<body>
 
 
+	CHEATER
+
 	<?php
 
 		// set database server access variables:

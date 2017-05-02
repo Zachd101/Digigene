@@ -7,17 +7,6 @@ session_start();
 <html>
 <head>
 
-	<style type="text/css">
-		
-		body {
-
-			font-weight: normal;
-			font-family: Tahoma, Geneva, sans-serif; 
-			color: black;
-		}
-
-
-	</style>
 
 </head>
 

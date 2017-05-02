@@ -72,6 +72,9 @@ else {
     if(mysqli_num_rows($result) > 0){
 
         if($row[2] == $password){
+
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
             
             ?>
 
@@ -84,7 +87,8 @@ else {
             <?php 
 
         } else {
-            echo "wrong password";
+            echo '<a href="http://localhost:8888/Digigene/Login.php">Login</a>';
+;
         }
 
     } else {
