@@ -26,6 +26,7 @@ session_start();
 
 <?php
 
+include 'Navbar.php';
 
 if (!isset($_POST['submit'])) {
 
@@ -106,15 +107,13 @@ else {
 
     <?php 
 
-
-
    }
 }
 
 
 ?>
 
-
+<a href="http://localhost:8888/Digigene/Login.php">Login</a>
 
 </body>
 

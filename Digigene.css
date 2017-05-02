@@ -1,3 +1,12 @@
+body {
+
+    font-family: Verdana;
+    font-style: italic;
+    color: black;
+    background-color: lightblue;
+            
+}
+
 
 ul {
     list-style-type: none;
