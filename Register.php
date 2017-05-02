@@ -65,10 +65,8 @@ else {
     $db = "digigene";
 
     // get form input
-    $_SESSION['username'] = $_POST['username'];
-    $_SESSION['password'] = $_POST['password'];
-    $username = $_SESSION['username'];
-    $password = $_SESSION['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
     // open connection
     $connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
@@ -95,6 +93,8 @@ else {
      // close connection
     mysqli_close($connection);
 
+    $_SESSION['username'] = $username;
+    $_SESSION['password'] = $password;
 
     ?>
 
@@ -104,8 +104,9 @@ else {
 
     </script>
 
-
     <?php 
+
+
 
    }
 }
