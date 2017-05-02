@@ -1,0 +1,36 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    font-family: Verdana;
+    font-style: italic;
+    display: block;
+    color: royalblue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: darkblue;
+}
+
+.active {
+    background-color: turquoise;
+}
+
