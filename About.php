@@ -8,6 +8,7 @@
 
 <?php 
 
+//Including Navbar
 include "Navbar.php";
 
 ?>

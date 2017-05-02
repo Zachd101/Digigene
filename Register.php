@@ -1,5 +1,6 @@
 <?php 
 
+//Starting Session
 session_start();
 
 ?>
@@ -15,6 +16,7 @@ session_start();
 
 <?php
 
+//Including the Navbar
 include 'Navbar.php';
 
 if (!isset($_POST['submit'])) {
@@ -69,9 +71,12 @@ else {
 
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
+    //If username returns any results - already a username with that name
     if (mysqli_num_rows($result) > 0){
 
     	echo "That username is already taken";
+
+    //If there were no results returned - username is open for the taking
     } else {
     	
 	// create query
@@ -83,17 +88,15 @@ else {
      // close connection
     mysqli_close($connection);
 
+    //Setting Session Variables 
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
 
+    //Redirecting to Home page
     ?>
-
     <script type="text/javascript">
- 
     	window.open("http://localhost:8888/Digigene/Home.php", "_self");
-
     </script>
-
     <?php 
 
    }

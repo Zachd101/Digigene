@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+//Including Navbar
 include 'Navbar.php'
 
 ?> 
@@ -9,17 +10,6 @@ include 'Navbar.php'
 <html>
 <head>
 
-	<style type="text/css">
-		
-		body {
-
-			font-weight: normal;
-			font-family: Tahoma, Geneva, sans-serif; 
-			color: black;
-		}
-
-
-	</style>
 
 	<title>The Genodome</title>
 </head>
@@ -27,7 +17,7 @@ include 'Navbar.php'
 
 	<?php
 
-
+	//Setting session variables to more useable names 
 	$username = $_SESSION['username'];
 	$password = $_SESSION['password'];
 

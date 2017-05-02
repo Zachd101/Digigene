@@ -1,5 +1,6 @@
 <?php 
 
+//Starting Session
 session_start();
 
 ?>
@@ -62,35 +63,39 @@ else {
     // select database
     mysqli_select_db($connection,$db) or die ("Unable to select database!");
     
-
+    //Searching for inputed username
     $query = "SELECT * FROM accounts WHERE username = '$username'";
 
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
+    //Fetching result of query
     $row = mysqli_fetch_row($result);
 
+    //If username exists 
     if(mysqli_num_rows($result) > 0){
 
+        //If password is right 
         if($row[2] == $password){
 
+            //Set session variables
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
             
+            //Redirecting to Home page 
             ?>
-
             <script type="text/javascript">
- 
                 window.open("http://localhost:8888/Digigene/Home.php", "_self");
-
             </script>
-
             <?php 
 
+        //If password is wrong 
         } else {
+            echo "Password is wrong. Please try again."
             echo '<a href="http://localhost:8888/Digigene/Login.php">Login</a>';
-;
+
         }
 
+    //If password doesn't exist
     } else {
         echo "That account doesn't exist";
     }
