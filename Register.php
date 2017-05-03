@@ -1,5 +1,6 @@
 <?php 
 
+//Starting Session
 session_start();
 
 ?>
@@ -19,6 +20,7 @@ session_start();
 
 	</style>
 
+
 </head>
 
 <body>
@@ -26,6 +28,8 @@ session_start();
 
 <?php
 
+//Including the Navbar
+include 'Navbar.php';
 
 if (!isset($_POST['submit'])) {
 
@@ -39,7 +43,7 @@ if (!isset($_POST['submit'])) {
 
     <input type="text" name="username" placeholder="Username">
 
-    <input type="text" name="password" placeholder="Password">
+    <input type="password" name="password" placeholder="Password">
 
     <input type="submit" name="submit">
 
@@ -79,9 +83,18 @@ else {
 
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
+
     if (mysqli_num_rows($result) > 0){
 
     	echo "That username is already taken";
+
+    //If username returns any results - already a username with that name
+    if (mysqli_num_rows($result) > 0){
+
+    	echo "That username is already taken";
+
+    //If there were no results returned - username is open for the taking
+
     } else {
     	
 	// create query
@@ -98,23 +111,29 @@ else {
 
     ?>
 
-    <script type="text/javascript">
- 
-    	window.open("http://localhost:8888/Digigene/Home.php", "_self");
+    //Setting Session Variables 
+    $_SESSION['username'] = $username;
+    $_SESSION['password'] = $password;
 
+
+    //Redirecting to Home page
+    ?>
+    <script type="text/javascript">
+
+ 
+
+    	window.open("http://localhost:8888/Digigene/Home.php", "_self");
     </script>
+
 
     <?php 
 
 
 
-   }
-}
-
 
 ?>
 
-
+<a href="http://localhost:8888/Digigene/Login.php">Login</a>
 
 </body>
 

@@ -1,4 +1,16 @@
 
+
+body {
+
+    font-family: Verdana;
+    font-style: italic;
+    color: black;
+    background-color: lightblue;
+            
+}
+
+
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -31,8 +43,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color:
-     turquoise;
+    background-color: turquoise;
 }
 
 h1 {
@@ -76,9 +87,7 @@ p {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-
-
-
+    background-color: turquoise;
 
 }
 
