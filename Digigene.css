@@ -1,5 +1,3 @@
-
-
 body {
 
     font-family: Verdana;
@@ -8,7 +6,6 @@ body {
     background-color: lightblue;
             
 }
-
 
 
 ul {
@@ -44,50 +41,5 @@ li a:hover:not(.active) {
 
 .active {
     background-color: turquoise;
-}
-
-h1 {
-
-    font-family: Verdana;
-    font-style: italic;
-    display: block;
-    color: royalblue;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
-
-
-
-
-
-}
-
-h2 {
-
-
-    font-family: Verdana;
-    font-style: italic;
-    display: block;
-    color: royalblue;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
-
-}
-
-
-p {
-    
-    font-family: Verdana;
-    font-style: italic;
-    display: block;
-    color: royalblue;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    background-color: turquoise;
-
 }
 

@@ -1,3 +1,10 @@
+<?php
+
+//Starting Session
+session_start();
+
+?>
+
 <html>
 <head>
 
@@ -7,28 +14,15 @@
 	
 </head>
 <body>
- 
- <button id="myBtn">Redirect</button>
-  <script>
-    var btn = document.getElementById('myBtn');
-    btn.addEventListener('click', function() {
-      document.location.href = 'http://www.google.com/';
-    });
- 
-  </script>
+
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li style="float:right"><a href="#about">About</a></li>
+  <li><a class="active" href="http://localhost:8888/Digigene/Home.php">Home</a></li>
+  <li><a href="http://localhost:8888/Digigene/Help.php">Help</a></li>
+  <li><a href="http://localhost:8888/Digigene/About.php">About</a></li>
+  <li style="float:right"><a href=""><?php echo $_SESSION['username'];?> </a></li>
+  <li style="float:right"><a href="http://localhost:8888/Digigene/Login.php">Log Out</a></li>
 </ul>
-<?php 
 
-  //some conditions
-
-  header("Location: http://www.google.com/");
-
-?>
 
 </body>
 </html> 

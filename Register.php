@@ -8,18 +8,6 @@ session_start();
 <html>
 <head>
 
-	<style type="text/css">
-		
-		body {
-
-			font-weight: normal;
-			font-family: Tahoma, Geneva, sans-serif; 
-			color: black;
-		}
-
-
-	</style>
-
 
 </head>
 
@@ -83,18 +71,12 @@ else {
 
     $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
 
-
-    if (mysqli_num_rows($result) > 0){
-
-    	echo "That username is already taken";
-
     //If username returns any results - already a username with that name
     if (mysqli_num_rows($result) > 0){
 
     	echo "That username is already taken";
 
     //If there were no results returned - username is open for the taking
-
     } else {
     	
 	// create query
@@ -106,29 +88,19 @@ else {
      // close connection
     mysqli_close($connection);
 
-    $_SESSION['username'] = $username;
-    $_SESSION['password'] = $password;
-
-    ?>
-
     //Setting Session Variables 
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
 
-
     //Redirecting to Home page
     ?>
     <script type="text/javascript">
-
- 
-
     	window.open("http://localhost:8888/Digigene/Home.php", "_self");
     </script>
-
-
     <?php 
 
-
+   }
+}
 
 
 ?>
