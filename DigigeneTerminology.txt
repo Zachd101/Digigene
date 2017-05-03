@@ -14,6 +14,8 @@ Gene Class - A ranking system that uses your Mutant Score to separate you into c
 
 Cross-fertilization - When a successful match has been created (The goal of a digigene user)
 
+Splice - Request a catch from another gener 
+
 Catching - When you accept a match request from another Gener
 
 Dodge - When you reject a match request from another Gener
