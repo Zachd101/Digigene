@@ -37,7 +37,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 <body>
 
 
-	<h1>Genodome</h1> <h5> The Gene-Sequencing/Matching Website</h5>
+	<h1>Genodome: Max Sucks at CSS</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
 	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
@@ -83,9 +83,8 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
    	}
 
-   
 	//looking at all posts 
-	$query = "SELECT * FROM posts ORDER BY id";
+	$query = "SELECT * FROM posts ORDER BY id DESC";
 
 	//executing query
 	$result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
@@ -95,9 +94,10 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
     	// print them one after another
     	echo "<table cellpadding=10 border=1>";
+    	echo "<tr> <td>Username</td> <td>Post</td> </tr>";
+
     	while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
-			echo "<td>".$row[0]."</td>";
        		echo "<td>" . $row[1]."</td>";
        		echo "<td>".$row[2]."</td>";
        		echo "</tr>";

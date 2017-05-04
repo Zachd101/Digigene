@@ -3,6 +3,8 @@
 //Starting Session
 session_start();
 
+$_SESSION['LoggedIn'] = False;
+
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +18,10 @@ session_start();
 
 include 'Navbar.php';
 
+// form not submitted
 if (!isset($_POST['submit'])) {
 
-// form not submitted
+$_SESSION['LoggedIn'] = False;
 
 ?>
 
@@ -80,6 +83,7 @@ else {
             //Set session variables
             $_SESSION['username'] = $username;
             $_SESSION['password'] = $password;
+            $_SESSION['LoggedIn'] = True;
             
             //Redirecting to Home page 
             ?>

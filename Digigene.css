@@ -5,14 +5,22 @@ body {
     background-color: white;
     color: darkblue;
     background-color: lightblue;
-    text-align: center;
-   
-
-
+    text-align: left;
 
             
 }
 
+h1, h5{
+
+
+    text-align: center;
+}
+
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
 
 ul {
    

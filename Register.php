@@ -91,6 +91,7 @@ else {
     //Setting Session Variables 
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
+    $_SESSION['LoggedIn'] = True;
 
     //Redirecting to Home page
     ?>
