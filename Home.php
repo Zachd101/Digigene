@@ -65,8 +65,6 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
     
    	} else { 
 
-   		
-
    		echo "something happened";
 
    		$query = "INSERT INTO posts (username, content) VALUES ('$username', '$content')";
@@ -94,7 +92,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
     	// print them one after another
     	echo "<table cellpadding=10 border=1>";
-    	echo "<tr> <td>Username</td> <td>Post</td> </tr>";
+    	echo "<tr> <th>Username</th> <th>Post</th> </tr>";
 
     	while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
