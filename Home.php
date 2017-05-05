@@ -32,6 +32,9 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 	<title>The Genodome</title>
 
+	<link rel="shortcut icon"
+ href="favicon.ico" />
+
 </head>
 
 <body>
@@ -42,9 +45,11 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
 	<?php
-
+	
+	// getting post data 
 	$content = $_POST['content'];
-
+	
+	//if post hasn't already been submitted 
 	if(!isset($_POST['submit'])){
 
 	?>
@@ -63,16 +68,18 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 	<?php
     
+	//if post has been submitted 
    	} else { 
 
-   		echo "something happened";
-
+   		
+		//creating query 
    		$query = "INSERT INTO posts (username, content) VALUES ('$username', '$content')";
 
 		// execute query
     	$result = mysqli_query($connection,$query) or die ("Error in query: $query. ".mysqli_error());
 
     	?>
+			//refreshing page
    			<script type="text/javascript">
    				window.open("http://localhost:8888/Digigene/Home.php", "_self");
    			</script>
@@ -107,6 +114,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
    		echo "No rows found!";
 	}	
 
+	//closing connection after everything is displayed 
 	mysqli_close($connection);
 
 	?>

@@ -1,8 +1,13 @@
 
+@font-face {
+
+    font-family: SuperSkyline; 
+    src : url(SuperSkyline.ttf) format('truetype');
+}
+
 body {
     
     font-family: Verdana;
-    background-color: white;
     color: darkblue;
     background-color: lightblue;
     text-align: left;
@@ -12,14 +17,19 @@ body {
 
 h1, h5{
 
-
     text-align: center;
 }
 
+table {
+    
+    border-collapse: collapse;
+    width: 100%;
+}
 
 th, td {
-    padding: 15px;
+    padding: 8px;
     text-align: left;
+    border-bottom: 1px solid black;
 }
 
 ul {
@@ -59,12 +69,8 @@ li a {
 li a:hover:not(.active) {
     background-color: darkblue;
     color : white;
-   
-
     
 }
-
-
 
 .active {
 
