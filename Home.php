@@ -32,15 +32,13 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 	<title>The Genodome</title>
 
-	<link rel="shortcut icon"
- href="favicon.ico" />
 
 </head>
 
 <body>
 
 
-	<h1>Genodome: Max Sucks at CSS</h1> <h5> The Gene-Sequencing/Matching Website</h5>
+	<h1>Digigene: Max Sucks at CSS</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
 	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
@@ -65,6 +63,14 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
     </form>
 
+    
+
+    <p>Search: </p>
+
+    <input type="text" name="searchBar" placeholder="Search Posts" onkeyup="filterPost()">
+
+
+    <br>
 
 	<?php
     
@@ -98,7 +104,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 	if (mysqli_num_rows($result) > 0) {
 
     	// print them one after another
-    	echo "<table cellpadding=10 border=1>";
+    	echo "<table id='postTable' cellpadding=10 border=1>";
     	echo "<tr> <th>Username</th> <th>Post</th> </tr>";
 
     	while($row = mysqli_fetch_row($result)) {
@@ -109,15 +115,43 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
     	}
 	    echo "</table>";
 
+	//If there were no rows to be printed
 	} else {
-   		// print status message
+   		// print status message for no rows
    		echo "No rows found!";
 	}	
 
-	//closing connection after everything is displayed 
+	//closing connection after everything is displayed (fine to close connection because submitting the form refreshes the php 
 	mysqli_close($connection);
 
 	?>
 
 </body>
+
+<script type="text/javascript">
+	
+function filterPost() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchBar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("postTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+
+</script>
+
 </html>

@@ -14,6 +14,7 @@ session_start();
 <body>
 
 
+
 <?php
 
 //Including the Navbar
@@ -24,6 +25,8 @@ if (!isset($_POST['submit'])) {
 // form not submitted
 
 ?>
+
+    <h2>Become a Gener</h2>    
 
 	<p>Register: </p>
 

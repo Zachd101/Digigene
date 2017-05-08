@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 28, 2017 at 05:17 PM
+-- Generation Time: May 08, 2017 at 09:08 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -31,14 +31,35 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `username`, `password`) VALUES
-(18, 'Help', 'Me'),
-(19, 'Test', 'Pass'),
-(20, 'Help', 'Me'),
-(21, 'Help', 'Me'),
-(22, 'Help', 'Me'),
-(23, 'Help', 'Me'),
-(24, 'Help', 'Me'),
-(25, 'Maybe', 'Works');
+(43, 'Zach', 'hello'),
+(44, 'Test', 'hello'),
+(46, 'Azam', 'dad'),
+(47, 'grandlakerocks', 'scottmh1'),
+(48, 'Admin', 'hello'),
+(49, 'Seboat Thegoat', 'Bruh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(10) NOT NULL,
+  `username` text NOT NULL COMMENT 'name of poster',
+  `content` text NOT NULL COMMENT 'content of post',
+  `tags` text NOT NULL COMMENT 'hashtags of post'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `username`, `content`, `tags`) VALUES
+(10, 'Zach', 'test', ''),
+(17, 'Admin', 'This is a post', ''),
+(18, 'Zach', 'emacs ', ''),
+(19, 'Admin', 'Hello test post', '');
 
 --
 -- Indexes for dumped tables
@@ -51,6 +72,12 @@ ALTER TABLE `accounts`
   ADD KEY `INDEX` (`id`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD KEY `id` (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -58,4 +85,9 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
