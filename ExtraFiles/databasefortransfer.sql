@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 08, 2017 at 09:08 PM
+-- Generation Time: May 08, 2017 at 09:16 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.0.15
 
@@ -13,6 +13,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `digigene`
 --
+CREATE DATABASE IF NOT EXISTS `digigene` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `digigene`;
 
 -- --------------------------------------------------------
 
