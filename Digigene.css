@@ -5,6 +5,8 @@
     src : url(SuperSkyline.ttf) format('truetype');
 }
 
+
+
 body {
     
     font-family: Verdana;
@@ -14,6 +16,9 @@ body {
 
             
 }
+
+
+
 
 h1, h5{
 
@@ -26,6 +31,7 @@ table {
     width: 100%;
 }
 
+
 th, td {
     padding: 8px;
     text-align: left;
@@ -36,7 +42,7 @@ ul {
    
     border-radius: 15px;
     
-    width: 97%;
+    width: 95%;
     height: 45px;    
     list-style-type: none;
     overflow: hidden;
@@ -72,7 +78,40 @@ li a:hover:not(.active) {
     
 }
 
+
+input {
+    width: 150px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+input[type=submit] {
+    width: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: darkblue;
+    background-color: white;
+    
+}
+input[type=submit]:hover {
+    background-color: darkblue;
+    color: white;
+  
+    
+}
+
+
 .active {
 
    
 }
+
