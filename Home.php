@@ -1,8 +1,11 @@
+
+
 <?php 
-session_start();
 
 //Including Navbar
 include 'Navbar.php';
+session_start();
+
 
 //Setting session variables to more useable names 
 $username = $_SESSION['username'];
@@ -36,6 +39,10 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 </head>
 
 <body>
+
+<br>
+<br>
+<br>
 
 
 	<h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
