@@ -10,7 +10,6 @@ session_start();
 //Setting session variables to more useable names 
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
-
 //Setting sql variables
 $host = "localhost";
 
