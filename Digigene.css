@@ -1,8 +1,8 @@
 
 @font-face {
 
-    font-family: SuperSkyline; 
-    src : url(SuperSkyline.ttf) format('truetype');
+    font-family: titleFont; 
+    src : url(titleFont.ttf) format('truetype');
 }
 
 
@@ -18,7 +18,10 @@ body {
 }
 
 
-
+h1{
+    font-family: titleFont;
+    font-size: 500%
+}
 
 h1, h5{
 

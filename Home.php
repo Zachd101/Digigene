@@ -38,7 +38,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 <body>
 
 
-	<h1>Digigene: Max Sucks at CSS</h1> <h5> The Gene-Sequencing/Matching Website</h5>
+	<h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
 	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
