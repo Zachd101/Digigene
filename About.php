@@ -5,7 +5,9 @@
 
 </head>
 <body>
-
+<br>
+<br>
+<br>
 <?php 
 
 //Including Navbar

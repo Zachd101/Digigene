@@ -13,7 +13,9 @@ $_SESSION['LoggedIn'] = False;
 	<title>Login</title>
 </head>
 <body>
-
+<br>
+<br>
+<br>
 <?php
 
 include 'Navbar.php';

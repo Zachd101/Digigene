@@ -5,7 +5,9 @@
 </head>
 <body>
 <!--HELP PAGE - tells users how to use the website, but really, lets be honest. These are grown adults, social media is not that hard -->
-
+<br>
+<br>
+<br>
 
 <?php
 
