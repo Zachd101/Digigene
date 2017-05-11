@@ -72,9 +72,9 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 	
       <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
-        <input type="text" name="content" placeholder="Content">
+        <input type="text" id="content" placeholder="Content">
 
-        <input type="submit" name="submit"> 
+        <input type="submit" id="submit"> 
 
       </form >
 

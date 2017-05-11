@@ -1,4 +1,5 @@
 
+/* Base Variables to change (referenced later in file)  */
 :root {
 
     --bg-color : grey;
@@ -6,25 +7,35 @@
     --text-color: black;
 }
 
+/* Adding new font for title(h1)*/
 @font-face {
 
     font-family: titleFont; 
     src : url(titleFont.ttf) format('truetype');
 }
 
-
+/* Class used to add a rounded container around an element, will be --div-color */
 .bubble {
     border-radius: 25px;
     background: var(--div-color);
     padding: 10px 10px; 
 }
 
+/* Variation of Bubble class using background color as bg */
+.bubblebg {
+    border-radius: 25px;
+    background: var(--bg-color);
+    padding: 10px 10px; 
+}
+
+/* Makes elements float next to each other */
 .float {
 
     float : left;
     padding-right: 20px;
 }
 
+/* Setting bg color and fonts for entire document */
 body {
     
     font-family: Verdana;
@@ -34,37 +45,39 @@ body {
                
 }
 
-
+/* Adding new font to h1 */
 h1{
     font-family: titleFont;
     font-size: 500%
 }
 
+/* Centering h1 and h5 to the middle of the screen */
 h1, h5{
 
     text-align: center;
 }
 
-.side {
-   display:inline-block;
-}
-
+/* Setting tables and cells to align left */
 table, td, th {    
 
-    border: 1px sol;
     text-align: left;
 }
 
+/* Collapsing table border and making table width the full screen */
 table {
     border-collapse: collapse;
+    border-width: 0px;
+    border-color: var(--div-color);
     width: 100%;
 }
 
+/* Adding padding to cels and horizontal bottom border */
 th, td {
     padding: 15px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text-color);
 }
 
+/* Setting Navbar so its stuck to top of screen (using absolute values) */
 ul {
     padding-top: 0px;
     margin: 0px;
@@ -76,23 +89,26 @@ ul {
     height: 65px;    
     list-style-type: none;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--div-color);
     border-bottom: solid;
     border-bottom-width: 2px;
     border-bottom-color: var(--text-color);
 
 }
 
+/* Setting list elements to float left */
 li {
     float: left;
     border-right:1px solid #bb;
 }
 
+/* Removing border from last navbar element */
 li:last-child {
     border-right: none;
 
 }
 
+/* Setting defaults for all navbar elements  */
 li a {
 
     font-family: Verdana;
@@ -105,6 +121,7 @@ li a {
     font-size: 120%;
 }
 
+/* Setting on hover colors */
 li a:hover:not(.active) {
     
     color: var(--div-color);
@@ -112,7 +129,7 @@ li a:hover:not(.active) {
     
 }
 
-
+/* Setting defaults for input element */
 input {
     width: 150px;
     padding: 12px 20px;
@@ -122,30 +139,20 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 15px;
+    background-color: var(--div-color);
+    color: var(--text-color);
 }
 
-input[type=submit] {
-    width: 100px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: var(--text-color);
-    background-color: var(--div-color);
+/* Changing size of submit button */
+input[type=submit] {   
     
+    width: 100px;
 }
+
+/* Changing color of submit button on hover */
 input[type=submit]:hover {
     background-color: var(--bg-color);
-    color: white;
+    color: var(--div-color);
   
     
 }
-
-
-.active {
-
-   
-}
-
