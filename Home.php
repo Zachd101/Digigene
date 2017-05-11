@@ -39,15 +39,18 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 <body>
 
-<br>
-<br>
-<br>
+<br><br><br><br>
 
 
-	<h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
+  
+  <div id="homeTitle">
 
-	<p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
+	 <h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
+	 <p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
+
+
+  </div>
 	<?php
 	
 	// getting post data 
@@ -58,6 +61,9 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 	?>
 
+  <br>
+
+  <div>
 
 	<p>Post: </p>
 	
@@ -75,8 +81,6 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
     <input type="text" id="searchBar"  placeholder="Search Posts" onkeyup="filterPost()">
 
-
-    <br>
 
 	<?php
     
@@ -120,6 +124,7 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
        		echo "</tr>";
     	}
 	    echo "</table>";
+      echo "</div>";
 
 	//If there were no rows to be printed
 	} else {

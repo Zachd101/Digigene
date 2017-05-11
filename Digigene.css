@@ -1,4 +1,11 @@
 
+:root {
+
+    --bg-color : grey;
+    --div-color : white;
+    --text-color: black;
+}
+
 @font-face {
 
     font-family: titleFont; 
@@ -6,12 +13,19 @@
 }
 
 
+div {
+    border-radius: 25px;
+    background: var(--div-color);
+    padding: 10px 10px; 
+}
+
+
 
 body {
     
     font-family: Verdana;
-    color: darkblue;
-    background-color: lightblue;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     text-align: left;
                
 }
