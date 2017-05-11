@@ -43,12 +43,13 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 
   
-  <div id="homeTitle">
+  <div id="homeTitle" class="bubble">
 
 	 <h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
 
 	 <p>Welcome to the genodome&nbsp<?php echo $username; ?>. This is your personal homepage tailored to you. Have fun reading other Gener's posts and looking for love in our fun, safe and genetically accurate website.</p>
 
+   <br>
 
   </div>
 	<?php
@@ -63,23 +64,32 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
   <br>
 
-  <div>
+  <div class="bubble">
 
-	<p>Post: </p>
+    <span class="float">
+
+	   <p>Post: </p>
 	
-    <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
+      <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
-    <input type="text" name="content" placeholder="Content">
+        <input type="text" name="content" placeholder="Content">
 
-    <input type="submit" name="submit">
+        <input type="submit" name="submit"> 
 
-    </form>
+      </form >
 
+    </span class="float">
+
+
+
+    <span >
+
+      <p>Search: </p>
+
+      <input id="searchBar" class="side" placeholder="Search Posts" onkeyup="filterPost()">
+
+    </span>
     
-
-    <p>Search: </p>
-
-    <input type="text" id="searchBar"  placeholder="Search Posts" onkeyup="filterPost()">
 
 
 	<?php
