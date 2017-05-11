@@ -11,14 +11,15 @@ $_SESSION['LoggedIn'] = False;
 <html>
 <head>
 	<title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="Digigene.css">
 </head>
 <body>
 <br>
-<br>
-<br>
-<?php
 
-include 'Navbar.php';
+<div class="bubble">
+
+<?php
 
 // form not submitted
 if (!isset($_POST['submit'])) {
@@ -112,6 +113,10 @@ else {
 <br>
 
 <a href="http://localhost:8888/Digigene/Register.php">Register</a>
+
+<br>
+
+</div>
 
 
 </body>

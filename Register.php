@@ -8,25 +8,27 @@ session_start();
 <html>
 <head>
 
+    <link rel="stylesheet" type="text/css" href="Digigene.css">
+
+    <title>Register</title>
+
 
 </head>
 
 <body>
 <br>
-<br>
-<br>
 
 
 <?php
 
-//Including the Navbar
-include 'Navbar.php';
 
 if (!isset($_POST['submit'])) {
 
 // form not submitted
 
 ?>
+
+<div class="bubble">    
 
     <h2>Become a Gener</h2>    
 
@@ -41,6 +43,7 @@ if (!isset($_POST['submit'])) {
     <input type="submit" name="submit">
 
     </form>
+
 
 <?php
 
@@ -112,6 +115,8 @@ else {
 ?>
 
 <a href="http://localhost:8888/Digigene/Login.php">Login</a>
+
+</div>
 
 </body>
 
