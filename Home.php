@@ -41,8 +41,6 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 
 <br><br><br><br>
 
-
-  
   <div id="homeTitle" class="bubble">
 
 	 <h1>Digigene: Your Personal Nightmare</h1> <h5> The Gene-Sequencing/Matching Website</h5>
@@ -72,9 +70,9 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
 	
       <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
-        <input type="text" id="content" placeholder="Content">
+        <input type="text" id="content" name='content' placeholder="Content">
 
-        <input type="submit" id="submit"> 
+        <input type="submit" id="submit" name='submit' > 
 
       </form >
 
@@ -96,6 +94,11 @@ mysqli_select_db($connection,$db) or die ("Unable to select database!");
     
 	//if post has been submitted 
    	} else { 
+
+
+    ///GET HASHTAGS WORKING HERE 
+
+
 
    		
 		//creating query 
