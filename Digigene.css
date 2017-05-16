@@ -156,3 +156,10 @@ input[type=submit]:hover {
   
     
 }
+
+a {
+
+    color: black;
+    font-style: bold;
+    font-family: Verdana;
+}

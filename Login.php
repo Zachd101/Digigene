@@ -11,14 +11,14 @@ $_SESSION['LoggedIn'] = False;
 <html>
 <head>
 	<title>Login</title>
-
+    
     <link rel="stylesheet" type="text/css" href="Digigene.css">
 </head>
 <body>
 <br>
 
 <div class="bubble">
-
+<h2>Welcome Back</h2>
 <?php
 
 // form not submitted
