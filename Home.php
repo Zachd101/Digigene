@@ -36,13 +36,12 @@
   //Allows debugging
   function debug_to_console( $data ) {
       $output = $data;
-      if ( is_array( $output ) )
+      if ( is_array( $output )){
           $output = implode( ',', $output);
-
+      }
       echo "<script>console.log('$output');</script>";
   }
 
-  debug_to_console("Test");
 
 ?> 
 
@@ -126,45 +125,63 @@
 
       */
 
-      //getting length of content to loop through
-      $strlength = strlen($content);
 
-      //looping through content 
-      for($i = 0; $i <= $strlen; $i++ ){
-      
-        $char = substr($content, $i, 1 );
+      //Making a new variable so I don't mess up content
+      $string = $content;
 
-        //If current character is a hashtag
-        if($char == "#"){
+      //String length
+      $stringlen = strlen($string); 
 
-          debug_to_console("Hashtag found ");
-          $stop = true; 
-          $z = 0;
+      for($i = 0; $i < $stringlen; $i++){
 
-          //looping through word after it
-          while($stop){
+          $char = substr($string, $i, 1);
 
-            $tagchar = substr( $content, $i + $z, 1 );
-            // If the character is a space (end the tag)
-            if($tagchar == " "){
+          //If tag start is found
+          if($char == "#"){
 
-              
+              debug_to_console("Tag Found");
 
-              //ADD THE TAG TO THE STR ARRAY 
-              $tag = substr($content, $i, $z);
+              //Start of the tag 
+              $start = $i;
 
-              $content = $tag;
+              //If should keep looking for more tag
+              $keepGoing = true;
 
-              //stopping while loop
-              $stop = false;
+              //Tag length while looking for the tag
+              $tagLen = 0;
 
-            } else {
-              //add one to number of chars past the hastag
-              $z += 1;
-            }
+              while($keepGoing == true){
+
+                  //Next char after start 
+                  $tagChar = substr($string, $start + $tagLen, 1);
+
+                  //If tag end is found
+                  if($tagChar == " " || $start + $tagLen >= $stringlen){
+
+                      //END THE TAG
+
+                      $tag = substr($string, $start, $tagLen);
+
+                      debug_to_console("Tag Ended ". $tag);
+
+                      //Break while loop
+                      $keepGoing = false;
+
+                  } else {
+
+                      //Add one to the current tag length
+                      $tagLen += 1; 
+                      
+                  }
+
+              }
+
           }
-        }
-      } 
+
+      }
+
+
+      
 
      ///HASTAGS
    		
