@@ -82,7 +82,7 @@
 
     <span class="float">
 
-	   <p>Post: </p>
+	   <h4>Post: </h4>
 	
       <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
@@ -98,7 +98,7 @@
 
     <span >
 
-      <p>Search: </p>
+      <h4>Search: </h4>
 
       <input id="searchBar" class="side" placeholder="Search Posts" onkeyup="filterPost()">
 

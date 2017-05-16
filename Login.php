@@ -96,7 +96,7 @@ else {
         //If password is wrong 
         } else {
             echo "Password is wrong. Please try again.";
-            echo '<a href="http://localhost:8888/Digigene/Login.php">Login</a>';
+            echo '<br><a id="Button" href="http://localhost:8888/Digigene/Login.php">Login</a>';
 
         }
 

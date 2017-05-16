@@ -19,6 +19,9 @@
     border-radius: 25px;
     background: var(--div-color);
     padding: 10px 10px; 
+    width: 90%;
+    margin: auto;
+
 }
 
 /* Variation of Bubble class using background color as bg */
@@ -154,6 +157,7 @@ input {
     font-size: 15px;
     background-color: var(--div-color);
     color: var(--text-color);
+
 }
 
 /* Changing size of submit button */
