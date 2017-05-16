@@ -11,7 +11,7 @@
 @font-face {
 
     font-family: titleFont; 
-    src : url(titleFont.ttf) format('truetype');
+    src : url(DeathStar.ttf) format('truetype');
 }
 
 /* Class used to add a rounded container around an element, will be --div-color */
@@ -76,6 +76,7 @@ table {
     border-collapse: collapse;
     border-width: 0px;
     border-color: var(--div-color);
+
     width: 100%;
 }
 
@@ -83,6 +84,10 @@ table {
 th, td {
     padding: 15px;
     border-bottom: 1px solid var(--text-color);
+}
+th{
+    border-bottom: 3px solid var(--text-color);
+    
 }
 
 /* Setting Navbar so its stuck to top of screen (using absolute values) */
