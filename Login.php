@@ -26,7 +26,7 @@ if (!isset($_POST['submit'])) {
 
 ?>
 
-	<p>Login: </p>
+	<h4>Login: </h4>
 
     <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
@@ -110,7 +110,7 @@ else {
 
 <br>
 
-<a href="http://localhost:8888/Digigene/Register.php">Register</a>
+<a id="Button" href="http://localhost:8888/Digigene/Register.php">Register</a>
 
 <br>
 

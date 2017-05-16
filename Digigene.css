@@ -44,6 +44,11 @@ body {
     text-align: left;
                
 }
+h4{
+    font-style: Bold;
+    font-family: Verdana;
+    font-size: 125%;
+}
 
 /* Adding new font to h1 */
 h1{
@@ -54,6 +59,9 @@ h1{
 /* Centering h1 and h5 to the middle of the screen */
 h1, h5{
 
+    text-align: center;
+}
+h2{
     text-align: center;
 }
 
@@ -157,9 +165,22 @@ input[type=submit]:hover {
     
 }
 
-a {
+a[id=Button] {
+    width: 125px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: var(--div-color);
+    color: var(--text-color);
+    text-decoration: none;
+    
+}
 
-    color: black;
-    font-style: bold;
-    font-family: Verdana;
+a[id=Button]:hover {
+ background-color: var(--bg-color);
+    color: var(--div-color);
 }
