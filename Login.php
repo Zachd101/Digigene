@@ -24,8 +24,6 @@ $_SESSION['LoggedIn'] = False;
 // form not submitted
 if (!isset($_POST['submit'])) {
 
-$_SESSION['LoggedIn'] = False;
-
 ?>
 
 	<p>Login: </p>

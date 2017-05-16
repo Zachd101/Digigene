@@ -3,6 +3,8 @@
 //Starting Session
 session_start();
 
+$_SESSION['LoggedIn'] = False;
+
 ?>
 
 <html>
