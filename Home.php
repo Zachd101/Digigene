@@ -148,15 +148,17 @@
               $keepGoing = true;
 
               //Tag length while looking for the tag
-              $tagLen = 0;
+              $tagLen = 1;
 
               while($keepGoing == true){
 
                   //Next char after start 
                   $tagChar = substr($string, $start + $tagLen, 1);
 
+                  $tagChar2 = substr($string, $start + $tagLen + 1, 1);
+
                   //If tag end is found
-                  if($tagChar == " " || $start + $tagLen >= $stringlen){
+                  if($tagChar == " " || $start + $tagLen >= $stringlen || $tagChar == "#"){
 
                       //END THE TAG
 
