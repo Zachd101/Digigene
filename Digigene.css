@@ -2,9 +2,9 @@
 /* Base Variables to change (referenced later in file)  */
 :root {
 
-    --bg-color : grey;
+    --bg-color :#E0EEEE;
     --div-color : white;
-    --text-color: black;
+    --text-color: teal;
 }
 
 /* Adding new font for title(h1)*/
@@ -16,7 +16,7 @@
 
 /* Class used to add a rounded container around an element, will be --div-color */
 .bubble {
-    border-radius: 25px;
+    border-radius: 10px;
     background: var(--div-color);
     padding: 10px 10px; 
     width: 90%;
@@ -168,7 +168,7 @@ input[type=submit] {
 
 /* Changing color of submit button on hover */
 input[type=submit]:hover {
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     color: var(--div-color);
   
     
@@ -190,6 +190,6 @@ a[id=Button] {
 }
 
 a[id=Button]:hover {
- background-color: var(--bg-color);
+ background-color: var(--text-color);
     color: var(--div-color);
 }
