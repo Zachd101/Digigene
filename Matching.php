@@ -17,12 +17,19 @@ include 'Navbar.php';
 
     <body>
 
-        <br><br><br>
+        <br><br><br><br>
 
+        <div class="bubble">
+        
         <h1>Matching</h1>
 
+        </div>
 
-        <p>Try our patented matching software for free. It will match you with your perfect soulmate a guaranteed 100% of the time, 50% of the time.</p>
+        <br>
+        <div class="bubble">
+
+            <p>Try our patented matching software for free. It will match you with your perfect soulmate a guaranteed 100% of the time, 50% of the time.</p>
+
 
         <?php
 
@@ -66,6 +73,7 @@ include 'Navbar.php';
 	if (mysqli_num_rows($result) > 0) {
 
     	    // print them one after another
+            echo "<br>";
     	    echo "<table id='userTable' cellpadding=10 border=1>";
     	    echo "<tr> <th>Username</th> <th>Splice</th> </tr>";
 
