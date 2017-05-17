@@ -1,4 +1,14 @@
 <?php
+/*
+
+You can include this in other files and the other file will get the css that is referenced here
+
+hmm.. 
+
+php sucks
+
+*/
+
 
 //Starting Session
 session_start();

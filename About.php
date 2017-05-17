@@ -5,10 +5,7 @@
 
 </head>
 <body>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
 <?php 
 
 //Including Navbar

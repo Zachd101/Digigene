@@ -1,13 +1,16 @@
 <?php 
 
-  //Including Navbar
+
+
+ //Including Navbar
   include 'Navbar.php';
   session_start();
 
-  if($_SESSION['LoggedIn'] == False){
 
-    ?>
-    <script type="text/javascript">
+  if($_SESSION['LoggedIn'] == False){
+      
+      ?>
+      <script type="text/javascript">
       window.open("http://localhost:8888/Digigene/Login.php", "_self");
     </script>
     <?php 
@@ -32,6 +35,7 @@
 
   // select database
   mysqli_select_db($connection,$db) or die ("Unable to select database!");
+
 
   //Allows debugging
   function debug_to_console( $data ) {
@@ -180,12 +184,8 @@
 
           }
 
-      }
+      }   
 
-
-      
-
-     ///HASTAGS
    		
   		//creating query 
      		$query = "INSERT INTO posts (username, content) VALUES ('$username', '$content')";
