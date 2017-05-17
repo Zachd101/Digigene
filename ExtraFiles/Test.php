@@ -31,10 +31,10 @@
     		echo "<table cellpadding=10 border=1>";
     		while($row = mysqli_fetch_row($result)) {
         		echo "<tr>";
-				echo "<td>".$row[0]."</td>";
+			echo "<td>".$row[0]."</td>";
         		echo "<td>" . $row[1]."</td>";
         		echo "<td>".$row[2]."</td>";
-				echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0].">Delete</a></td>";
+			echo "<td><a href=".$_SERVER['PHP_SELF']. "?id=".$row[0].">Delete</a> </td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
@@ -53,15 +53,15 @@
 
 			// create query to delete record
 			echo $_SERVER['PHP_SELF'];
-    		$query = "DELETE FROM accounts WHERE id = ".$_GET['id'];
+    		    $query = "DELETE FROM accounts WHERE id = ".$_GET['id'];
 
 			// run the query
-     		$result = mysqli_query($connection,$query) or die ("Error in query: $query. " . mysqli_error());
+     		    $result = mysqli_query($connection,$query) or die ("Error in query: $query. " . mysqli_error());
 			
-			// reset the url to remove id $_GET variable
-			$location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
-			exit;
+		    // reset the url to remove id $_GET variable
+		    $location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+		    echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
+		    exit;
 			
 		}
 		

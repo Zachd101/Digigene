@@ -100,7 +100,7 @@
 
 
 
-    <span >
+    <span>
 
       <h4>Search: </h4>
 
@@ -110,8 +110,7 @@
     
 
 
-	<?php
-    
+	<?php    
 	//if post has been submitted 
    	} else { 
 
