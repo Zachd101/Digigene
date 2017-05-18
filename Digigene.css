@@ -67,6 +67,9 @@ h1, h5{
 h2{
     text-align: center;
 }
+h5{
+    font-size: 150%;
+}
 
 /* Setting tables and cells to align left */
 table, td, th {    
@@ -85,7 +88,7 @@ table {
 
 /* Adding padding to cels and horizontal bottom border */
 th, td {
-    padding: 15px;
+    padding: 28px;
     border-bottom: 1px solid var(--text-color);
 }
 th{
