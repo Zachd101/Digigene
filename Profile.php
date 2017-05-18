@@ -1,47 +1,189 @@
+
 <?php
 session_start();
 
 include 'Navbar.php';
- $username = $_SESSION['username'];
- $password = $_SESSION['password'];
+$username = $_SESSION['username'];
+$password = $_SESSION['password'];
 
 ?>
 
 
 <html>
 
-<head>
+    <head>
+        
 	<title><?php echo $username; ?></title>
 
+    </head>
+    <body>
+        <br>
+        <br>
+        <br>
+        <br>
 
-</head>
-<body>
-<br>
-<br>
-<br>
-<br>
+        <div class="bubble">
+            <h1> <?php echo $username; ?></h1>
+        </div>
 
-<div class="bubble">
-<h1> <?php echo $username; ?></h1>
-</div>
-<?php 
-	// open connection
-    $connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
+        <br>
 
-    // select database
-    mysqli_select_db($connection,$db) or die ("Unable to select database!");
-	
-	$query = "INSERT INTO accounts(bio, age, disease, gender) VALUES ('$bio', '$age','$disease','$gender')";
+        <?php 
 
-    // execute query
-    $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
- 
-     // close connection
-    mysqli_close($connection);
+        //SETTING VARIABLES AND FUNCTIONS
+        
+        //Setting sql variables
+        $host = "localhost";
 
- 
+        $user = "root";
+
+        $pass = "root";
+
+        $db = "digigene";
+
+        // open connection
+        $connection = mysqli_connect($host, $user, $pass) or die ("Unable to connect!");
+
+        // select database
+        mysqli_select_db($connection,$db) or die ("Unable to select database!");
+
+        //Setting session variables to more useable names 
+        $username = $_SESSION['username'];
+        $password = $_SESSION['password'];
+        
+        //Allows debugging with console
+        function debug_to_console( $data ) {
+            $output = $data;
+            if ( is_array( $output )){
+                $output = implode( ',', $output);
+            }
+            echo "<script>console.log('$output');</script>";
+        }
 
 
-?>
+        $query = "SELECT * FROM accounts WHERE username = '$username'";
+
+        // execute query
+      	$result = mysqli_query($connection,$query) or die ("Error in query: $query. ".mysqli_error());
+
+        $row = mysqli_fetch_row($result);
+
+        $bio = $row[3];
+
+        $age = $row[4];
+
+        $gender = $row[6];
+
+
+        echo "<div class='bubble'>";
+
+        echo "<h4>About $username</h4>";
+
+        echo "<p>Bio: $bio</p>";
+
+        echo "<p>Age: $age</p>";
+
+        echo "<p>Gender: $gender</p>";
+        
+        echo "</div>";
+
+        echo "<br>";
+
+
+        //if post hasn't already been submitted 
+	if(!isset($_POST['submit'])){
+
+        ?>
+
+
+            <div class="bubble">
+
+
+                <h4>Update Records: </h4>
+                
+                <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
+
+
+                    <input type="text" id="bio" name="bio" placeholder="bio">
+
+                    <input type="text" id="gender" name="gender" placeholder="gender">
+
+                    <input type="text" id="age" name="age" placeholder="age">
+
+                    <input type="submit" id="submit" name="submit">
+
+                    
+                </form>
+
+            </div>
+
+
+        <?php
+
+        } else {
+
+
+
+            $bio = $_POST['bio'];
+            $gender = $_POST['gender'];
+            $age = $_POST['age'];
+
+            $query = "UPDATE accounts SET bio = '$bio', gender = '$gender', age = '$age' WHERE username = '$username'";
+            
+            // execute query
+      	    $result = mysqli_query($connection,$query) or die ("Error in query: $query. ".mysqli_error());
+
+            debug_to_console("Updated");
+
+            ?>
+
+            //refreshing page
+     	    <script type="text/javascript">
+     	     window.open("http://localhost:8888/Digigene/Profile.php", "_self");
+     	    </script>
+
+        <?php
+        
+
+        }
+
+
+        //looking at all posts 
+	$query = "SELECT * FROM posts WHERE username = '$username'";
+
+	//executing query
+	$result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
+
+	// see if any rows were returned
+	if (mysqli_num_rows($result) > 0) {
+
+    	    // print them one after another
+            echo "<br>";
+            echo "<div class='bubble'>";
+            echo "<h4>Posts</h4>";
+    	    echo "<table id='postTable' cellpadding=10 border=1>";
+    	    echo "<tr> <th>Username</th> <th>Post</th> </tr>";
+
+    	    while($row = mysqli_fetch_row($result)) {
+        	echo "<tr>";
+       		echo "<td>" . $row[1]."</td>";
+       		echo "<td>".$row[2]."</td>";
+       		echo "</tr>";
+    	    }
+	    echo "</table>";
+            echo "</div>";
+
+	    //If there were no rows to be printed
+	} else {
+   	    // print status message for no rows
+   	    echo "No rows found!";
+	}
+        
+
+        
+
+
+
+        ?>    
 </body>
 </html>

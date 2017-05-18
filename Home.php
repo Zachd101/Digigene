@@ -1,7 +1,5 @@
 <?php 
 
-
-
  //Including Navbar
   include 'Navbar.php';
   session_start();
@@ -46,7 +44,6 @@
       echo "<script>console.log('$output');</script>";
   }
 
-
 ?> 
 
 <!DOCTYPE html>
@@ -55,7 +52,6 @@
 <head>
 
 	<title>The Genodome</title>
-
 
 </head>
 
@@ -73,8 +69,7 @@
 
   </div>
 	<?php
-	
-	
+		
 	//if post hasn't already been submitted 
 	if(!isset($_POST['submit'])){
 
@@ -85,8 +80,6 @@
   <div class="bubble">
 
     <span class="float">
-
-	   <h4>Post: </h4>
 	
       <form id="form" action="<?=$_SERVER['PHP_SELF']?>"  method="post">
 
@@ -98,17 +91,17 @@
 
     </span class="float">
 
+    <span class="float"> 
 
-
-    <span>
-
-      <h4>Search: </h4>
-
-      <input id="searchBar" class="side" placeholder="Search Posts" onkeyup="filterPost()">
+      <input id="searchTags" class="side" placeholder="Search Tags" onkeyup="filterTags()">
 
     </span>
-    
 
+    <span class="float">
+
+        <input id="searchUsers" class="side" placeholder="Search Users" onkeyup="filterUsers()">
+        
+    </span>
 
 	<?php    
 	//if post has been submitted 
@@ -120,15 +113,14 @@
 
       ///GET HASHTAGS WORKING HERE (ITS NOT WORKING)  
 
-      /*
+        /*
 
         - Loop through content (see if there is extended for loop in php - no $char=  stuff) 
         - Find hashtag, the word directly after should be added to the tags column 
         - See if there is array value so that multiple tags can be added to the same post
 
-      */
-
-
+        */
+           
       //Making a new variable so I don't mess up content
       $string = $content;
 
@@ -238,29 +230,52 @@
 </body>
 
 <script type="text/javascript">
-	
-function filterPost() {
-  // Declare variables 
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("searchBar");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("postTable");
-  tr = table.getElementsByTagName("tr");
+ 
+ function filterTags() {
+     // Declare variables 
+     var input, filter, table, tr, td, i;
+     input = document.getElementById("searchTags");
+     octothorpe = "#";   
+     filter = input.value.toUpperCase();
+     filter = octothorpe.concat(filter);   
+     table = document.getElementById("postTable");
+     tr = table.getElementsByTagName("tr");
 
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
+     // Loop through all table rows, and hide those who don't match the search query
+     for (i = 0; i < tr.length; i++) {
+         td = tr[i].getElementsByTagName("td")[1];
+         if (td) {
+             if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                 tr[i].style.display = "";
+             } else {
+                 tr[i].style.display = "none";
+             }
+         } 
+     }
+ }
 
+ function filterUsers() {
+     // Declare variables 
+     var input, filter, table, tr, td, i;
+     input = document.getElementById("searchUsers");
+     filter = input.value.toUpperCase(); 
+     table = document.getElementById("postTable");
+     tr = table.getElementsByTagName("tr");
 
+     // Loop through all table rows, and hide those who don't match the search query
+     for (i = 0; i < tr.length; i++) {
+         td = tr[i].getElementsByTagName("td")[0];
+         if (td) {
+             if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                 tr[i].style.display = "";
+             } else {
+                 tr[i].style.display = "none";
+             }
+         } 
+     }
+ }
+
+ 
 </script>
 
 </html>

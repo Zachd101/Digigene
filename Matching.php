@@ -11,7 +11,7 @@ include 'Navbar.php';
     
     <head>
 
-        <title>Relationships</title>
+        <title>Matching</title>
 
     </head>
 
@@ -20,8 +20,8 @@ include 'Navbar.php';
         <br><br><br><br>
 
         <div class="bubble">
-        
-        <h1>Matching</h1>
+            
+            <h1>Matching</h1>
 
         </div>
 
@@ -30,10 +30,12 @@ include 'Navbar.php';
 
             <p>Try our patented matching software for free. It will match you with your perfect soulmate a guaranteed 100% of the time, 50% of the time.</p>
 
-
+        </div><br>
         <?php
 
 
+        //SETTING VARIABLES AND FUNCTIONS
+        
         //Setting sql variables
         $host = "localhost";
 
@@ -63,6 +65,84 @@ include 'Navbar.php';
         }    
 
 
+
+        //HANDLING SUCCESSFUL MATCHES
+
+
+        $query = "SELECT * FROM matches WHERE recipient = '$username'";
+
+
+        $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
+
+        if(mysqli_num_rows($result) > 0){
+
+            while($row = mysqli_fetch_row($result)){
+
+                debug_to_console("Layer 1: ". $row[1]);
+                
+                $from = $row[1];
+                $to = $row[2];
+
+
+                while($row = mysqli_fetch_row($result)){
+
+                    debug_to_console("Layer 2: ". $row);
+
+                    $from2 = $row[1];
+                    $to2 = $row[2];
+                    
+
+                }
+
+                
+            }
+        }
+
+        
+        
+        //SHOWING MATCH REQUESTS
+        //looking at matches that request user
+        $query = "SELECT * FROM matches WHERE recipient = '$username'";
+
+        //executing query
+
+        $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
+
+        echo "<div class='bubble'>";
+
+        
+        // see if any rows were returned
+	if (mysqli_num_rows($result) > 0) {
+
+    	    // print them one after another
+            
+            echo "<br>";
+    	    echo "<table id='matchTable' cellpadding=10 border=1>";
+    	    echo "<tr> <th>Username</th> <th>Splice</th> </tr>";
+
+    	    while($row = mysqli_fetch_row($result)) {
+        	echo "<tr>";
+       		echo "<td>" . $row[1]."</td>";
+                echo "<td><a href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Reciprocate Match Request </a> </td>";
+       		echo "</tr>";
+    	    }
+	    echo "</table>";
+            
+
+	    //If there were no rows to be printed
+	} else {
+   	    // print status message for no rows
+   	    echo "No one has requested to match with you.";
+	}
+
+        echo "</div>";
+        echo "<br>";
+        
+
+
+        //SHOWING AVAILABLE USERNAMES
+
+        
         //looking at all usernames 
 	$query = "SELECT * FROM accounts ORDER BY id DESC";
 
@@ -73,6 +153,7 @@ include 'Navbar.php';
 	if (mysqli_num_rows($result) > 0) {
 
     	    // print them one after another
+            echo "<div class='bubble'>";
             echo "<br>";
     	    echo "<table id='userTable' cellpadding=10 border=1>";
     	    echo "<tr> <th>Username</th> <th>Splice</th> </tr>";
@@ -80,7 +161,7 @@ include 'Navbar.php';
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
        		echo "<td>" . $row[1]."</td>";
-                echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0].">Request A Match</a> </td>";
+                echo "<td><a href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Request A Match</a> </td>";
        		echo "</tr>";
     	    }
 	    echo "</table>";
@@ -92,32 +173,64 @@ include 'Navbar.php';
    	    echo "No rows found!";
 	}	
 
+
+        
+        
+        //HANDLING MATCH REQUEST BUTTON 
+        
         //If request a match link was pressed
-        if (isset($_GET['id'])) {
+        if (isset($_GET['username'])) {
 
             //Add match to matching table
-
             /*
 
                - Add new table into database for requests (2 columns, From and To)
                - Show all requests that are To user, if a request is reciprocated (they both request each other), create the match
                - Maybe list of potential matches should show bio in the table, would look better if each table cell was separated from each other(like cards in materialize BUT NOT MATERIALIZE.) 
-
                
              */
-           
 
 
-            
-            // reset the url to remove id $_GET variable
-	    $location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-	    echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
-	    exit;
-	    
+            //Getting Get data
+            $recipient = $_GET['username'];
+
+
+            //Checking for duplicate match
+            $query = "SELECT * FROM matches WHERE sender = '$username' AND recipient = '$recipient'";
+
+            $result = mysqli_query($connection, $query) or die("Error in query: $query.".mysqli_error());
+
+            if(mysqli_num_rows($result) > 0){
+
+                //Match has already been requested
+
+                debug_to_console("Match Had already been requested");
+                
+
+            } else {
+
+
+                $query = "INSERT INTO matches (sender, recipient) VALUES ('$username', '$recipient')";
+
+                $result = mysqli_query($connection, $query) or die("Error in query: $query.".mysqli_error());
+
+                debug_to_console('Match Request Inserted');
+                
+                mysqli_close($connection);
+
+                //Redirecting to Home page 
+        ?>
+            <script type="text/javascript">
+             window.open("http://localhost:8888/Digigene/Matching.php", "_self");
+            </script>
+        <?php 
+
 
         }
         
+        }
+        
         ?>
-    
-</body>
+        
+    </body>
 </html> 

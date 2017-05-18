@@ -11,7 +11,7 @@
 @font-face {
 
     font-family: titleFont; 
-    src : url(DeathStar.ttf) format('truetype');
+    src : url(titleFont.ttf) format('truetype');
 }
 
 /* Class used to add a rounded container around an element, will be --div-color */
