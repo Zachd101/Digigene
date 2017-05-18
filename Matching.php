@@ -94,7 +94,7 @@ include 'Navbar.php';
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
        		echo "<td>" . $row[1]."</td>";
-                echo "<td><a href='http://localhost:8888/Digigene/Matched.php?match=".$row[1]."'>Reciprocate Match Request </a> </td>";
+                echo "<td><a class='thing' href='http://localhost:8888/Digigene/Matched.php?match=".$row[1]."'>Reciprocate Match Request </a> </td>";
        		echo "</tr>";
     	    }
 	    echo "</table>";
@@ -132,7 +132,7 @@ include 'Navbar.php';
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
        		echo "<td>" . $row[1]."</td>";
-                echo "<td><a href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Request A Match</a> </td>";
+                echo "<td><a class='thing' href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Request A Match</a> </td>";
        		echo "</tr>";
     	    }
 	    echo "</table>";

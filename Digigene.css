@@ -39,6 +39,12 @@
     padding-right: 20px;
 }
 
+.thing {
+
+    text-decoration: none;
+    color: var(--text-color) ;
+}
+
 /* Setting bg color and fonts for entire document */
 body {
     
