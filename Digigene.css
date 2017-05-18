@@ -17,6 +17,7 @@
 /* Class used to add a rounded container around an element, will be --div-color */
 .bubble {
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: var(--div-color);
     padding: 10px 10px; 
     width: 90%;
@@ -43,9 +44,7 @@ body {
     
     font-family: Verdana;
     color: var(--text-color);
-    background-color: var(--bg-color);
-    text-align: left;
-               
+background-color: var(--bg-color);
 }
 h4{
     font-style: Bold;
@@ -84,16 +83,23 @@ table {
     border-color: var(--div-color);
 
     width: 100%;
+
 }
 
 /* Adding padding to cels and horizontal bottom border */
 th, td {
     padding: 28px;
     border-bottom: 1px solid var(--text-color);
+
 }
 th{
     border-bottom: 3px solid var(--text-color);
     
+
+}
+
+td {
+
 }
 
 /* Setting Navbar so its stuck to top of screen (using absolute values) */
