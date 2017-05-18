@@ -11,7 +11,7 @@
 @font-face {
 
     font-family: titleFont; 
-    src : url(titleFont.ttf) format('truetype');
+    src : url(agero!.ttf) format('truetype');
 }
 
 /* Class used to add a rounded container around an element, will be --div-color */
@@ -182,7 +182,10 @@ input[type=submit]:hover {
   
     
 }
+p[id=Profile]{
 
+
+}
 a[id=Button] {
     width: 125px;
     padding: 12px 20px;
