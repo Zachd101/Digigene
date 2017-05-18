@@ -45,8 +45,11 @@ include "Navbar.php";
 
 	<br> 
 
-	<p>Max Noteboom: Our front end developer here at Digigene. He's dutch. Yeah, that's pretty much it.  We won't pay him until his work becomes satisfactory.  ###Scheduled for firing, delete bio soon, ehh he fixed the navbar maybe he will stay on the team###</p>
+	<p>Max Noteboom: Our front end developer(Digital Art Master) here at Digigene. He's dutch. Yeah, that's pretty much it.  We won't pay him until his work becomes satisfactory.  ###Scheduled for firing, delete bio soon, ehh he fixed the navbar maybe he will stay on the team###</p>
+	
+	<h4>Sprint Review</h4>
 
+	<p>Our sprints started with a 1-2 minute stand up meeting to discuss our ideas and plans for that work period. Then we got to work using Html, Php, JS, and CSS to make our masterpiece. Eustorgius Theodosius Origenes our beloved creator, peace be upon him, proposed all the ideas through the portal in the Nile. We were chosen as his hands, his workers, and work we did. All of ETO's ideas were replicated exactly as they were explained, without fail. He told us about the wonders of SQL query and its use in pulling data from tables in Phpmyadmin. He didn't stop at SQL however, he broke all laws he was bound by and explained to us the variety of possible creations with CSS. He taught us padding, colours, shadows, fonts, size, positioning, margins, css functions and so much more. ETO sat us down one day and said these exact words: "The use of materialized.css is a vile infringement of the art that is CSS, I declare the use of this imposter ultimately forbidden." This task was of course not a simple matter, at first our website was "Trash" -Everyone, but after perilous studying on the internet we soon became masters of the trade. On the other hand we were already otherworldly gods of backend programming, devastating competition with our complex for loops and if statements.</p>
 	<br>
 
 </div>

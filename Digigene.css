@@ -42,7 +42,16 @@
 .thing {
 
     text-decoration: none;
-    color: var(--text-color) ;
+    background-color: var(--text-color);
+    color: var(--div-color);
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+    
+
 }
 
 /* Setting bg color and fonts for entire document */
