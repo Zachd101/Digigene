@@ -69,35 +69,6 @@ include 'Navbar.php';
         //HANDLING SUCCESSFUL MATCHES
 
 
-        $query = "SELECT * FROM matches WHERE recipient = '$username'";
-
-
-        $result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
-
-        if(mysqli_num_rows($result) > 0){
-
-            while($row = mysqli_fetch_row($result)){
-
-                debug_to_console("Layer 1: ". $row[1]);
-                
-                $from = $row[1];
-                $to = $row[2];
-
-
-                while($row = mysqli_fetch_row($result)){
-
-                    debug_to_console("Layer 2: ". $row);
-
-                    $from2 = $row[1];
-                    $to2 = $row[2];
-                    
-
-                }
-
-                
-            }
-        }
-
         
         
         //SHOWING MATCH REQUESTS
@@ -123,7 +94,7 @@ include 'Navbar.php';
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
        		echo "<td>" . $row[1]."</td>";
-                echo "<td><a href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Reciprocate Match Request </a> </td>";
+                echo "<td><a href='http://localhost:8888/Digigene/Matched.php?match=".$row[1]."'>Reciprocate Match Request </a> </td>";
        		echo "</tr>";
     	    }
 	    echo "</table>";
@@ -229,7 +200,7 @@ include 'Navbar.php';
         }
         
         }
-        
+            
         ?>
         
     </body>

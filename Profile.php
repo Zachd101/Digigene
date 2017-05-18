@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -94,8 +93,7 @@ $password = $_SESSION['password'];
 	if(!isset($_POST['submit'])){
 
         ?>
-
-
+            
             <div class="bubble">
 
 
@@ -122,8 +120,6 @@ $password = $_SESSION['password'];
 
         } else {
 
-
-
             $bio = $_POST['bio'];
             $gender = $_POST['gender'];
             $age = $_POST['age'];
@@ -144,9 +140,7 @@ $password = $_SESSION['password'];
 
         <?php
         
-
         }
-
 
         //looking at all posts 
 	$query = "SELECT * FROM posts WHERE username = '$username'";
@@ -180,10 +174,7 @@ $password = $_SESSION['password'];
 	}
         
 
-        
-
-
-
+       
         ?>    
 </body>
 </html>
