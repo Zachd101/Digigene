@@ -5,6 +5,19 @@ include 'Navbar.php';
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
 
+
+if(isset($_GET['currentuser'])){
+
+
+$currentuser = $_GET['currentuser'];
+
+
+} else {
+
+$currentuser = $username;
+
+}
+
 ?>
 
 
@@ -12,7 +25,7 @@ $password = $_SESSION['password'];
 
     <head>
         
-	<title><?php echo $username; ?></title>
+	<title><?php echo $currentuser; ?></title>
 
     </head>
     <body>
@@ -22,7 +35,7 @@ $password = $_SESSION['password'];
         <br>
 
         <div class="bubble">
-            <h1> <?php echo $username; ?></h1>
+            <h1> <?php echo $currentuser; ?></h1>
         </div>
 
         <br>
@@ -60,7 +73,7 @@ $password = $_SESSION['password'];
         }
 
 
-        $query = "SELECT * FROM accounts WHERE username = '$username'";
+        $query = "SELECT * FROM accounts WHERE username = '$currentuser'";
 
         // execute query
       	$result = mysqli_query($connection,$query) or die ("Error in query: $query. ".mysqli_error());
@@ -76,7 +89,7 @@ $password = $_SESSION['password'];
 
         echo "<div class='bubble'>";
 
-        echo "<h4>About $username</h4>";
+        echo "<h4>About $currentuser:</h4>";
 
         echo "<p>Bio: $bio</p>";
 
@@ -90,7 +103,7 @@ $password = $_SESSION['password'];
 
 
         //if post hasn't already been submitted 
-	if(!isset($_POST['submit'])){
+	if(!isset($_POST['submit']) && $currentuser == $username){
 
         ?>
             
@@ -131,11 +144,14 @@ $password = $_SESSION['password'];
 
             debug_to_console("Updated");
 
-            ?>
+            $profilelink = "Profile.php?currentuser=" . $username;
 
-            //refreshing page
+        ?>
      	    <script type="text/javascript">
-     	     window.open("http://localhost:8888/Digigene/Profile.php", "_self");
+
+      
+             
+     	     window.open(<?php echo $profilelink; ?>, "_self");
      	    </script>
 
         <?php
@@ -143,7 +159,7 @@ $password = $_SESSION['password'];
         }
 
         //looking at all posts 
-	$query = "SELECT * FROM posts WHERE username = '$username'";
+	$query = "SELECT * FROM posts WHERE username = '$currentuser'";
 
 	//executing query
 	$result = mysqli_query($connection, $query) or die ("Error in query: $query. ".mysqli_error());
@@ -154,7 +170,7 @@ $password = $_SESSION['password'];
     	    // print them one after another
             echo "<br>";
             echo "<div class='bubble'>";
-            echo "<h4>Posts</h4>";
+            echo "<h4>Posts:</h4>";
     	    echo "<table id='postTable' cellpadding=10 border=1>";
     	    echo "<tr> <th>Username</th> <th>Post</th> </tr>";
 
