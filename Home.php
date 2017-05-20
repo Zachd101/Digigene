@@ -192,7 +192,10 @@
       	
       	<?php 
 
-     }
+        }
+
+
+        //PRINTING ALL POSTS 
 
 	//looking at all posts 
 	$query = "SELECT * FROM posts ORDER BY id DESC";
@@ -209,7 +212,7 @@
 
     	while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
-       		echo "<td>" . $row[1]."</td>";
+       		echo "<td><a href='Profile.php?currentuser=".$row[1]."' class='thing' >" . $row[1]."</a></td>";
        		echo "<td>".$row[2]."</td>";
        		echo "</tr>";
     	}

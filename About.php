@@ -26,7 +26,7 @@ include "Navbar.php";
 
 	<h4>What is Digigene?</h4>
 
-	<p>Digigene was founded in 2017 by Max Noteboom and Zachary Dawood. This revolutionary website swept away all competition in the cutthroat world of genetic matching services. It's intuitive design and unique style wowed users from Transnistria to Vanuatu and gave trillions of people a chance at a new relationship. Digigene is a Social Media/Relationship Matching Website that uses the shared suffering that comes with enduring horrible chronic genetic diseases to bring people together.</p>
+	<p>Digigene was founded in 2017 by Max Noteboom and Zachary Dawood. This revolutionary website swept away all competition in the cutthroat world of genetic matching services. It's intuitive design and unique style wowed users from Transnistria to Vanuatu and gave trillions of people a chance at a new relationship. Digigene is a Social Media/Relationship Matching Website that uses our patented R.A.N.D.O.M seach algorithm to find the perfect match. </p>
 
 	<h4>What Did We use to make Digigene?</h4>
 

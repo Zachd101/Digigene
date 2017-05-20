@@ -73,7 +73,7 @@ $currentuser = $username;
         }
 
 
-        $query = "SELECT * FROM accounts WHERE username = '$currentuser'";
+        $query = "SELECT * FROM accounts WHERE username = '$currentuser' ORDER BY id DESC";
 
         // execute query
       	$result = mysqli_query($connection,$query) or die ("Error in query: $query. ".mysqli_error());
