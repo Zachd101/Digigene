@@ -14,6 +14,6 @@ Features:
 
 "Features":
 
-- Can't get to profiles from home page (only from matching)
+
 - Matching system is still super hard to use
 - No commenting, liking or disliking posts 
