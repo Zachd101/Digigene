@@ -187,7 +187,7 @@
       	?>
   			//refreshing page
      			<script type="text/javascript">
-     				window.open("http://localhost:8888/Digigene/Home.php", "_self");
+     				window.open("http://localhost:8888/Digigene/Home", "_self");
      			</script>
       	
       	<?php 
@@ -212,7 +212,7 @@
 
     	while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
-       		echo "<td><a href='Profile.php?currentuser=".$row[1]."' class='thing' >" . $row[1]."</a></td>";
+       		echo "<td><a href='Profile?currentuser=".$row[1]."' class='thing' >" . $row[1]."</a></td>";
        		echo "<td>".$row[2]."</td>";
        		echo "</tr>";
     	}

@@ -89,14 +89,14 @@ else {
             //Redirecting to Home page 
             ?>
             <script type="text/javascript">
-                window.open("http://localhost:8888/Digigene/Home.php", "_self");
+                window.open("http://localhost:8888/Digigene/Home", "_self");
             </script>
             <?php 
 
         //If password is wrong 
         } else {
             echo "Password is wrong. Please try again.";
-            echo '<br><a id="Button" href="http://localhost:8888/Digigene/Login.php">Login</a>';
+            echo '<br><a id="Button" href="http://localhost:8888/Digigene/Login">Login</a>';
 
         }
 
@@ -110,7 +110,7 @@ else {
 
 <br>
 
-<a id="Button" href="http://localhost:8888/Digigene/Register.php">Register</a>
+<a id="Button" href="http://localhost:8888/Digigene/Register">Register</a>
 
 <br>
 

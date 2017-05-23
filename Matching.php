@@ -93,8 +93,8 @@ include 'Navbar.php';
 
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
-       		echo "<td><a class='thing' href='Profile.php?currentuser=$row[1]'> $row[1] </a></td>";
-                echo "<td><a class='thing' href='Matched.php?match=".$row[1]."'>Reciprocate Match Request </a> </td>";
+       		echo "<td><a class='thing' href='Profile?currentuser=$row[1]'> $row[1] </a></td>";
+                echo "<td><a class='thing' href='Matched?match=".$row[1]."'>Reciprocate Match Request </a> </td>";
        		echo "</tr>";
     	    }
 	    echo "</table>";
@@ -131,7 +131,7 @@ include 'Navbar.php';
 
     	    while($row = mysqli_fetch_row($result)) {
         	echo "<tr>";
-       		echo "<td><a class='thing' href='Profile.php?currentuser=$row[1]'> $row[1] </a></td>";
+       		echo "<td><a class='thing' href='Profile?currentuser=$row[1]'> $row[1] </a></td>";
                 echo "<td><a class='thing' href=".$_SERVER['PHP_SELF']."?username=".$row[1].">Request A Match</a> </td>";
        		echo "</tr>";
     	    }
@@ -192,7 +192,7 @@ include 'Navbar.php';
                 //Redirecting to Home page 
         ?>
             <script type="text/javascript">
-             window.open("Matching.php", "_self");
+             window.open("Matching", "_self");
             </script>
         <?php 
 

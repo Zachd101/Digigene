@@ -28,13 +28,13 @@ $username = $_SESSION['username'];
 <body>
 
 <ul>
-  <a href="Home.php"> <img class="logo" style="float:left"; src="Dnaheart.png"> </a>
-  <li><a href="Home.php"><b>Digigene</b></a></li>
-  <li><a href="Matching.php">Matching</a></li>
-  <li><a href="Help.php">Help</a></li>
-  <li><a href="About.php">About</a></li>
-  <li style="float:right"><a href="Profile.php?currentuser=<?php echo $username;?>"><?php echo $username; ?></a></li>
-  <li style="float:right"><a href="Login.php">Log Out</a></li>
+  <a href="Home"> <img class="logo" style="float:left"; src="Dnaheart.png"> </a>
+  <li><a href="Home"><b>Digigene</b></a></li>
+  <li><a href="Matching">Matching</a></li>
+  <li><a href="Help">Help</a></li>
+  <li><a href="About">About</a></li>
+  <li style="float:right"><a href="Profile?currentuser=<?php echo $username;?>"><?php echo $username; ?></a></li>
+  <li style="float:right"><a href="Login">Log Out</a></li>
 </ul>
 
 

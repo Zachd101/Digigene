@@ -106,7 +106,7 @@ else {
     //Redirecting to Home page
     ?>
     <script type="text/javascript">
-    	window.open("http://localhost:8888/Digigene/Home.php", "_self");
+    	window.open("http://localhost:8888/Digigene/Home", "_self");
     </script>
     <?php 
 
